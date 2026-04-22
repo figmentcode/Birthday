@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Birthday Trivia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="card" id="game">
+    <h1>Birthday Trivia</h1>
+    <div id="progress">Question <span id="qIndex">1</span> of <span id="qTotal">1</span></div>
+
+    <div id="questionArea" style="margin-top:12px;">
+      <div class="question" id="questionText"></div>
+      <input type="text" id="answerInput" autocomplete="off" placeholder="Type your answer here" />
+      <div class="controls">
+        <button id="submitBtn">Submit</button>
+        <button id="skipBtn" class="secondary">Skip</button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+      <div class="acrostic" id="acrosticLine">
+        <div class="acro-target" id="acroTarget" aria-hidden="true"></div>
+      </div>
+
+    <div id="endArea" class="hidden">
+      <h2>Correct Answers</h2>
+      <div class="answers-list" id="answersList"></div>
+
+
+
+      <div style="margin-top:12px;">
+        <button id="replayBtn">Replay Animation</button>
+      </div>
+    </div>
+ 
+    <footer>
+      Put together the first letter of each correct answer to reveal your birthday present.
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>

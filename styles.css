@@ -1,0 +1,155 @@
+
+header {
+    font-family: "Comic Sans MS" "Poppins", sans-serif;
+    background-color:#C8102E;
+    color:#ffffff;
+    font-size: 35px;
+    padding: 10px 10px;
+    text-align:center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 8px 20px rgba(200,16,46,0.15);
+}
+body { /* Subtle gradient */
+      background: linear-gradient(135deg, #F1BE48, #EED484, #fff3c4);
+  background-size: 400% 400%;
+  font-family: "Comic Sans MS" "Poppins", sans-serif; 
+    margin:40px auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    padding:10px 20px; 
+    color:#111;
+  animation: bgShift 12s ease infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+    
+    h1 { margin-bottom:6px; }
+
+    footer {
+  margin-top: 40px;
+  color: #111;
+  font-size: 16px;
+}
+
+.card { border:3px solid #F1BE48; 
+    background-color:#fff; 
+    max-width: 400px;
+    margin-top: 40px;
+    border-radius:16px; 
+    padding:28px; 
+    box-shadow: 0 8px 20px rgba(200,16,46,0.15); 
+    position:relative; 
+    overflow:visible; }
+    .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.question { font-weight:600; margin-bottom:8px; }
+input[type="text"] { width:100%; padding:10px; font-size:20px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box; }
+.controls { margin-top:12px; display:flex; gap:8px; }
+button { transition: transform .12s ease, box-shadow .12s ease; 
+    padding:10px 14px; 
+    border-radius:6px; 
+    border:0; 
+    background:#C8102E; 
+    color:#fff; 
+    cursor:pointer; 
+    font-weight:600; }
+    button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(11,102,255,0.12); }
+button.secondary { background:#e6eefc; color:#C8102E; border:1px solid #cfe0ff; }
+.feedback { margin-top:10px; font-weight:600; }
+.answers-list { margin-top:10px; display:flex; flex-direction:column; gap:6px; }
+.answers-list div { padding:8px; border-radius:6px; background:#fafafa; border:1px solid #f0f0f0; }
+.acrostic { margin-top:12px; font-size:20px; letter-spacing:2px; font-weight:700; text-align:center; min-height:80px; }
+.hidden { display:none; }
+.correct { color: #0a8a3a;
+    animation: pop 300ms ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.wrong { color: #c62828; }
+footer { margin-top:18px; color:#666; font-size:16px; }
+
+/* Floating letter elements used for animation */
+.floating-letter {
+  position:fixed;
+  top: 12px;                 /* distance from top of viewport; adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index:9999;
+  pointer-events:none;
+  font-weight:900;
+  color:#C8102E;
+  font-size:34px;
+  transform-origin:center center;
+  will-change: transform, opacity;
+  text-shadow: 0 6px 18px rgba(11,102,255,0.12);
+  opacity:0;
+}
+
+.acrostic {
+  position: relative;
+  top: 12px;                 /* distance from top of viewport; adjust as needed */
+  left: 0;
+  transform: none;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  box-sizing: border-box;
+}
+
+/* Final target container for assembled phrase */
+.acro-target {
+    height:64px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  font-weight:1000;
+  font-size:50px;
+  letter-spacing:0px;
+  color:#C8102E;
+  font-family: "Comic Sans MS" "Poppins", sans-serif;
+  text-transform:uppercase;
+  transform:translateY(0);
+  opacity:0;
+  background: #fff;
+  padding: 12px 24px;
+  border-radius: 14px;
+  border: 3px solid #C8102E;
+  box-shadow: 0 6px 18px rgba(200,16,46,0.15);
+}
+
+.acro-letter {
+  display:inline-box;
+  justify-content: center;
+  width:auto;
+  padding: 0 2px;
+  text-align:center;
+  box-sizing:border-box;
+  font-weight: 800;
+  opacity:0;
+  transform:scale(0.95);
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.acro-target.show { opacity:1; }
+
+.acro-letter.revealed { opacity:1; transform:scale(1); }
