@@ -121,9 +121,9 @@ footer { margin-top:18px; color:#666; font-size:16px; }
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:6px;
+  gap:4px;
   font-weight:1000;
-  font-size:clamp(20px, 8vw, 50px);
+  font-size:clamp(20px, 7vw, 40px);
   letter-spacing:0px;
   color:#C8102E;
   font-family: "Comic Sans MS" "Poppins", sans-serif;
@@ -135,6 +135,7 @@ footer { margin-top:18px; color:#666; font-size:16px; }
   border-radius: 14px;
   border: 3px solid #C8102E;
   box-shadow: 0 6px 18px rgba(200,16,46,0.15);
+  max-width: 90vw;
 }
 
 .acro-letter {
@@ -183,8 +184,10 @@ footer { margin-top:18px; color:#666; font-size:16px; }
 
   .acro-target {
     font-size: 6vw;   /* much smaller */
-    padding: 6px 10px;
+    padding: 4px 8px;
     border-width: 2px;
+    max-width: 480px;
+    gap: 2px;
   }
 
   .acro-letter {
