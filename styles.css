@@ -93,7 +93,7 @@ footer { margin-top:18px; color:#666; font-size:16px; }
   pointer-events:none;
   font-weight:900;
   color:#C8102E;
-  font-size:4vh;
+  font-size: clamp(18px, 6vw, 34px);
   transform-origin:center center;
   will-change: transform, opacity;
   text-shadow: 0 6px 18px rgba(11,102,255,0.12);
@@ -123,7 +123,7 @@ footer { margin-top:18px; color:#666; font-size:16px; }
   align-items:center;
   gap:6px;
   font-weight:1000;
-  font-size:clamp(20px, 6vw, 50px);
+  font-size:clamp(20px, 8vw, 50px);
   letter-spacing:0px;
   color:#C8102E;
   font-family: "Comic Sans MS" "Poppins", sans-serif;
@@ -155,6 +155,17 @@ footer { margin-top:18px; color:#666; font-size:16px; }
 .acro-letter.revealed { opacity:1; transform:scale(1); }
 
 @media (max-width: 480px) {
-  .floating-letter { font-size: 6vw; }
-  .acro-target { font-size: 7vw; }
+  .floating-letter {
+    font-size: 6vw;
+    top: 1vh;
+  }
+
+  .acro-target {
+    font-size: 7vw;
+    padding: 8px 12px;
+  }
+
+  .acrostic {
+    padding: 4px 8px;
+  }
 }
