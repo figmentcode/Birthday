@@ -85,15 +85,15 @@ footer { margin-top:18px; color:#666; font-size:16px; }
 
 /* Floating letter elements used for animation */
 .floating-letter {
-  position:fixed;
-  top: 12px;                 /* distance from top of viewport; adjust as needed */
+  position:absolute;
+  top: 2vh;                 /* distance from top of viewport; adjust as needed */
   left: 50%;
   transform: translateX(-50%);
   z-index:9999;
   pointer-events:none;
   font-weight:900;
   color:#C8102E;
-  font-size:34px;
+  font-size:4vh;
   transform-origin:center center;
   will-change: transform, opacity;
   text-shadow: 0 6px 18px rgba(11,102,255,0.12);
@@ -102,7 +102,7 @@ footer { margin-top:18px; color:#666; font-size:16px; }
 
 .acrostic {
   position: relative;
-  top: 12px;                 /* distance from top of viewport; adjust as needed */
+  top: 2vh;                 /* distance from top of viewport; adjust as needed */
   left: 0;
   transform: none;
   width: auto;
@@ -111,19 +111,19 @@ footer { margin-top:18px; color:#666; font-size:16px; }
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 12px;
+  padding: 1vh 2vw;
   box-sizing: border-box;
 }
 
 /* Final target container for assembled phrase */
 .acro-target {
-    height:64px;
+    height:auto;
   display:flex;
   justify-content:center;
   align-items:center;
   gap:6px;
   font-weight:1000;
-  font-size:50px;
+  font-size:clamp(20px, 6vw, 50px);
   letter-spacing:0px;
   color:#C8102E;
   font-family: "Comic Sans MS" "Poppins", sans-serif;
@@ -131,7 +131,7 @@ footer { margin-top:18px; color:#666; font-size:16px; }
   transform:translateY(0);
   opacity:0;
   background: #fff;
-  padding: 12px 24px;
+  padding: 1vh 2vw;
   border-radius: 14px;
   border: 3px solid #C8102E;
   box-shadow: 0 6px 18px rgba(200,16,46,0.15);
